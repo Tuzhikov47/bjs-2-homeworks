@@ -3,6 +3,23 @@ function getArrayParams(arr) {
   let min, max, sum, avg;
 
   // Ваш код
+  min = Infinity;
+  max = -Infinity;
+  sum = 0;
+
+  let(i = 0; i<arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    
+    sum = sum + arr[i];
+  }
+
+  avg = (sum/arr.length).toFixed(2);
 
   return { min: min, max: max, avg: avg };
 }
