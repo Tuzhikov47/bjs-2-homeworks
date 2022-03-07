@@ -7,7 +7,7 @@ function getArrayParams(arr) {
   max = -Infinity;
   sum = 0;
 
-  let(i = 0; i<arr.length; i++) {
+  for (let i = 0; i<arr.length; i++) {
     if (arr[i] > max) {
       max = arr[i];
     }
