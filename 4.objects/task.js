@@ -22,18 +22,19 @@ Student.prototype.addMark = function (mark) {
   }
 }
 
-Student.prototype.addMarks = function (...newmarks) {
-  if(this.marks === undefined){
-    this.marks = [...newmarks];
-  } else {
-    this.marks.push(...newmarks);
-  }
+Student.prototype.addMarks = function (...marks) {
+  if( !this.marks ) this.marks = marks; 
+  else this.marks = this.marks.concat(marks);
 }
 
 Student.prototype.getAverage = function () {
+  if (!this.marks === undefined){
+    return 'нет оценок';
+  } else {
   const sum = this.marks.reduce((acc, mark) => acc + mark, 0);
   const lenght = this.marks.length;
   return sum / lenght;
+  };
 };
 
 Student.prototype.exclude = function (reason) {
